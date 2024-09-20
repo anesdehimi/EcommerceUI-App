@@ -2,8 +2,9 @@ import 'package:ecommerce_app/models/shoe.dart';
 import 'package:flutter/material.dart';
 
 class ShoeTile extends StatelessWidget {
-  Shoe shoe;
-  void Function()? onTap;
+  final Shoe shoe;
+  final void Function()? onTap;
+
   ShoeTile({
     super.key,
     required this.shoe,
@@ -13,8 +14,8 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25),
-      width: 280,
+      margin: const EdgeInsets.only(left: 25),
+      width: MediaQuery.of(context).size.width * 0.6,
       decoration: BoxDecoration(
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(12),
@@ -22,22 +23,27 @@ class ShoeTile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //shoe pic
+          // Shoe image with fixed height
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(shoe.imagePath),
+            child: Image.asset(
+              shoe.imagePath,
+              height: 150, // Set fixed height for the image
+              fit: BoxFit.contain,
+            ),
           ),
 
-          //description
+          // Shoe description with flexible sizing to fit all text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               shoe.description,
               style: TextStyle(color: Colors.grey[600]),
+              softWrap: true, // Allow the text to wrap to new lines
             ),
           ),
 
-          //price + details
+          // Price and details with proper alignment
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
             child: Row(
@@ -47,7 +53,7 @@ class ShoeTile extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //shoe name
+                    // Shoe name
                     Text(
                       shoe.name,
                       style: const TextStyle(
@@ -55,22 +61,17 @@ class ShoeTile extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-
-                    const SizedBox(
-                      height: 5,
-                    ),
-
-                    //price
+                    const SizedBox(height: 5),
+                    // Shoe price
                     Text(
-                      '\$' + shoe.price,
-                      style: TextStyle(
+                      '\$${shoe.price}',
+                      style: const TextStyle(
                         color: Colors.grey,
                       ),
                     ),
                   ],
                 ),
-
-                //plus button
+                // Add button with gesture detection
                 GestureDetector(
                   onTap: onTap,
                   child: Container(
@@ -82,7 +83,6 @@ class ShoeTile extends StatelessWidget {
                         bottomRight: Radius.circular(12),
                       ),
                     ),
-                    //button to add to cart
                     child: const Icon(
                       Icons.add,
                       color: Colors.white,
@@ -91,7 +91,7 @@ class ShoeTile extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

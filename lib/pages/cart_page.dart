@@ -21,7 +21,7 @@ class _CartPageState extends State<CartPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           // heading
           children: [
-            Text(
+            const Text(
               "My cart",
               style: TextStyle(
                 fontWeight: FontWeight.bold,

@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
 
                 //other pages
                 const Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.home,
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: EdgeInsets.symmetric(horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.info,
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Padding(
-              padding: const EdgeInsets.only(left: 25.0, bottom: 25),
+              padding: EdgeInsets.only(left: 25.0, bottom: 25),
               child: ListTile(
                 leading: Icon(
                   Icons.logout,

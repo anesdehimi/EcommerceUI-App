@@ -15,7 +15,6 @@ class CartItem extends StatefulWidget {
 }
 
 class _CartItemState extends State<CartItem> {
-  
   // remove item from cart
   void removeItemFromCart() {
     Provider.of<Cart>(context, listen: false).removeItemFromCart(widget.shoe);
@@ -34,7 +33,7 @@ class _CartItemState extends State<CartItem> {
         title: Text(widget.shoe.name),
         subtitle: Text(widget.shoe.price),
         trailing: IconButton(
-          icon: Icon(Icons.delete),
+          icon: const Icon(Icons.delete),
           onPressed: removeItemFromCart,
         ),
       ),

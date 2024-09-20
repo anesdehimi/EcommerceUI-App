@@ -44,8 +44,10 @@ class IntroPage extends StatelessWidget {
 
                 //start now button
                 GestureDetector(
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage())),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePage())),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[900],
@@ -53,7 +55,7 @@ class IntroPage extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.all(25),
                     child: const Center(
-                      child: const Text(
+                      child: Text(
                         "Shop Now",
                         style: TextStyle(
                           color: Colors.white,

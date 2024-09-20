@@ -28,6 +28,10 @@ class _ShopPageState extends State<ShopPage> {
 
   @override
   Widget build(BuildContext context) {
+    // get screen size
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Consumer<Cart>(
       builder: (context, value, child) => Column(
         children: [
@@ -55,7 +59,7 @@ class _ShopPageState extends State<ShopPage> {
           ),
           // message
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25.0),
+            padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
             child: Text(
               "everyone flies.. some fly longer than others",
               style: TextStyle(color: Colors.grey[600]),
@@ -63,8 +67,8 @@ class _ShopPageState extends State<ShopPage> {
           ),
 
           // hot picks
-          const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -106,9 +110,12 @@ class _ShopPageState extends State<ShopPage> {
               },
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
-            child: Divider(
+          Padding(
+            padding: EdgeInsets.only(
+                top: screenHeight * 0.03,
+                left: screenWidth * 0.06,
+                right: screenWidth * 0.06),
+            child: const Divider(
               color: Colors.white,
             ),
           ),

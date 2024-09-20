@@ -10,18 +10,6 @@ class Cart extends ChangeNotifier {
       imagePath: "lib/images/2.png",
       description: "the forward-thinking design of this latest signature shoe.",
     ),
-    /*Shoe(
-      name: "Air Jordan",
-      price: "250",
-      imagePath: "lib/images/1.png",
-      description: "the forward-thinking design of this latest signature shoe.",
-    ),
-    Shoe(
-      name: "Zoom Fraek",
-      price: "193",
-      imagePath: "lib/images/3.png",
-      description: "the forward-thinking design of this latest signature shoe.",
-    ),*/
     Shoe(
       name: "Zoom Freak",
       price: "250",
